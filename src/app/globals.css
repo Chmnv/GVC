@@ -66,6 +66,8 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
+    /* Keeps anchor targets out from under the fixed navbar (~64 px). */
+    scroll-padding-top: 5rem;
   }
 
   body {

@@ -7,12 +7,19 @@ type LinkProps = ComponentProps<typeof Link>;
 interface NavLinkProps extends Omit<LinkProps, "children"> {
   label: string;
   external?: boolean;
+  active?: boolean;
   className?: string;
 }
 
+/**
+ * Lightweight navigation link with an animated gradient underline.
+ * Use it inside footers, breadcrumbs or in-page nav lists.
+ * The premium scroll-spy desktop nav lives directly inside `Header`.
+ */
 export function NavLink({
   label,
   external,
+  active,
   className,
   href,
   ...rest
@@ -24,9 +31,13 @@ export function NavLink({
   return (
     <Link
       href={href}
+      aria-current={active ? "page" : undefined}
       className={cn(
-        "group relative inline-flex items-center text-sm font-medium text-muted-foreground transition-colors duration-300",
-        "hover:text-foreground focus-visible:text-foreground focus-visible:outline-none",
+        "group relative inline-flex items-center text-sm font-medium transition-colors duration-300",
+        active
+          ? "text-foreground"
+          : "text-muted-foreground hover:text-foreground focus-visible:text-foreground",
+        "focus-visible:outline-none",
         className,
       )}
       {...externalProps}
@@ -35,7 +46,10 @@ export function NavLink({
       {label}
       <span
         aria-hidden
-        className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-primary to-nebula transition-all duration-300 group-hover:w-full"
+        className={cn(
+          "absolute -bottom-1 left-0 h-px bg-gradient-to-r from-primary to-nebula transition-all duration-300",
+          active ? "w-full" : "w-0 group-hover:w-full",
+        )}
       />
     </Link>
   );

@@ -8,7 +8,10 @@ import { Noise } from "@/components/effects/noise";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28 sm:pt-32">
+    <section
+      id="home"
+      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28 sm:pt-32"
+    >
       <GridBackground />
       <Noise opacity={0.05} />
 
