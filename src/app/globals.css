@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Базовые токены тёмной темы (по умолчанию — dark) */
+    --background: 230 35% 4%;
+    --foreground: 220 20% 96%;
+
+    --surface: 230 30% 7%;
+    --surface-elevated: 230 30% 10%;
+
+    --border: 230 25% 18%;
+    --ring: 226 100% 66%;
+
+    --muted: 230 20% 14%;
+    --muted-foreground: 220 12% 65%;
+
+    --primary: 226 100% 66%;
+    --primary-foreground: 230 35% 6%;
+
+    --accent: 188 95% 60%;
+    --accent-foreground: 230 35% 6%;
+
+    --nebula: 280 90% 65%;
+    --nebula-foreground: 230 35% 6%;
+
+    --star: 196 100% 72%;
+
+    --destructive: 0 80% 60%;
+
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground;
+    background-image:
+      radial-gradient(
+        ellipse 80% 60% at 50% -10%,
+        hsl(var(--primary) / 0.22),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 90% 10%,
+        hsl(var(--nebula) / 0.18),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 50% 40% at 10% 20%,
+        hsl(var(--accent) / 0.12),
+        transparent 60%
+      );
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.35);
+    color: hsl(var(--foreground));
+  }
+
+  /* Тонкая премиум-полоса прокрутки */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 9999px;
+    border: 2px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+  }
+}
+
+@layer components {
+  /* Базовый glassmorphism для премиум-карточек */
+  .glass {
+    @apply relative overflow-hidden rounded-2xl border border-white/5 bg-surface/60 backdrop-blur-xl;
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(var(--surface-elevated) / 0.7),
+      hsl(var(--surface) / 0.4)
+    );
+  }
+
+  /* Хайлайт-рамка с градиентом — отлично смотрится на тёмном фоне */
+  .gradient-border {
+    position: relative;
+    isolation: isolate;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      130deg,
+      hsl(var(--primary) / 0.6),
+      hsl(var(--nebula) / 0.4) 40%,
+      transparent 70%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Текстовый градиент */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      120deg,
+      hsl(var(--foreground)) 0%,
+      hsl(var(--primary)) 45%,
+      hsl(var(--nebula)) 100%
+    );
+  }
+
+  /* Универсальная сетка-фон для секций */
+  .bg-grid {
+    background-image: var(--tw-bg-grid, none);
+    background-size: 48px 48px;
+    background-image: linear-gradient(
+        to right,
+        hsl(var(--border) / 0.35) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, hsl(var(--border) / 0.35) 1px, transparent 1px);
+    mask-image: radial-gradient(
+      ellipse at center,
+      black 30%,
+      transparent 75%
+    );
+  }
+}
+
+@layer utilities {
+  .container-tight {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Уважение к настройкам пользователя — отключаем анимации */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
