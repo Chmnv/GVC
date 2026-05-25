@@ -10,8 +10,8 @@ interface RevealProps extends HTMLMotionProps<"div"> {
 }
 
 /**
- * Universal "reveal-on-scroll" обёртка. Готовая площадка для будущих
- * премиум-анимаций — стейджи, стаггеры, параллакс — расширяется без боли.
+ * Universal scroll-reveal wrapper. A drop-in foundation for future
+ * premium animations — stages, staggers, parallax — without friction.
  */
 export function Reveal({
   children,

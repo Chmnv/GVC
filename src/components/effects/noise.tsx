@@ -6,8 +6,8 @@ interface NoiseProps {
 }
 
 /**
- * Тонкий шум поверх фона — добавляет «киношную» фактуру.
- * Использует SVG turbulence, без внешних ассетов.
+ * Subtle film-grain noise overlay.
+ * Uses an inline SVG turbulence filter — no external assets required.
  */
 export function Noise({ className, opacity = 0.04 }: NoiseProps) {
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>

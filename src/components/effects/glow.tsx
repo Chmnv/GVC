@@ -20,7 +20,7 @@ const sizeMap: Record<NonNullable<GlowProps["size"]>, string> = {
 };
 
 /**
- * Мягкий цветовой свет — используется для атмосферных пятен на фоне.
+ * Soft colored glow — used for atmospheric background highlights.
  */
 export function Glow({
   className,

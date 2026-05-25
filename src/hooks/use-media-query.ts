@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 
 /**
- * Реактивно отслеживает CSS media query.
- * Безопасно для SSR — на сервере вернёт `false`.
+ * Reactively tracks a CSS media query.
+ * SSR-safe — returns `false` on the server.
  */
 export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(false);

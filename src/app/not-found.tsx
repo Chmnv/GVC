@@ -16,15 +16,15 @@ export default function NotFound() {
           404 · Off-orbit
         </p>
         <h1 className="mt-4 font-display text-6xl font-bold tracking-tight sm:text-8xl">
-          <span className="text-gradient">Сигнал потерян</span>
+          <span className="text-gradient">Signal lost</span>
         </h1>
         <p className="mx-auto mt-6 max-w-md text-muted-foreground">
-          Похоже, эта страница улетела в открытый космос. Вернитесь на главную и
-          мы покажем ближайший рейс.
+          This page has drifted into deep space. Head back home and we&rsquo;ll
+          point you to the nearest flight.
         </p>
         <div className="mt-8 flex justify-center">
           <Button asChild size="lg">
-            <Link href="/">Вернуться домой</Link>
+            <Link href="/">Back to home</Link>
           </Button>
         </div>
       </Container>

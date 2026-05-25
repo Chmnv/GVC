@@ -11,7 +11,7 @@ export function Logo({ className, showText = true }: LogoProps) {
   return (
     <Link
       href="/"
-      aria-label={`${siteConfig.name} — на главную`}
+      aria-label={`${siteConfig.name} — home`}
       className={cn(
         "group flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-90",
         className,

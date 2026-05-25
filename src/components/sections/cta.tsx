@@ -15,21 +15,22 @@ export function CTA() {
 
           <div className="relative grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
             <div className="space-y-6">
-              <Badge variant="default">Присоединяйтесь к клубу</Badge>
+              <Badge variant="default">Join the club</Badge>
               <h2 className="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-                Готовы войти на орбиту{" "}
-                <span className="text-gradient">Galaxy?</span>
+                Ready to enter the{" "}
+                <span className="text-gradient">Galaxy orbit?</span>
               </h2>
               <p className="max-w-xl text-base text-muted-foreground sm:text-lg">
-                Оставьте заявку — наш тренер свяжется в течение дня, подберёт
-                группу и пригласит на бесплатную пробную тренировку.
+                Drop us a line — a coach will get back to you within a day,
+                match you with the right group and invite you to a free trial
+                session.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 lg:items-end">
               <Button asChild size="lg" className="w-full lg:w-auto">
                 <a href="mailto:hello@galaxyvolleyball.club">
-                  Записаться сейчас
+                  Book now
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
@@ -39,10 +40,10 @@ export function CTA() {
                 size="lg"
                 className="w-full lg:w-auto"
               >
-                <a href="#schedule">Посмотреть расписание</a>
+                <a href="#schedule">View schedule</a>
               </Button>
               <p className="mt-2 text-xs text-muted-foreground">
-                Первая тренировка — бесплатно. Возраст: 7–45 лет.
+                First training is free. Ages 7–45.
               </p>
             </div>
           </div>

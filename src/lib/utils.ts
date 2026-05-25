@@ -2,22 +2,22 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 /**
- * Объединяет classNames с учётом конфликтов Tailwind.
- * Используется как `cn("base", condition && "extra", props.className)`.
+ * Merges classNames while resolving Tailwind conflicts.
+ * Usage: `cn("base", condition && "extra", props.className)`.
  */
 export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
 }
 
 /**
- * Форматирует число с разделителями тысяч в локали ru-RU.
+ * Formats a number with thousands separators using the en-US locale.
  */
 export function formatNumber(value: number): string {
-  return new Intl.NumberFormat("ru-RU").format(value);
+  return new Intl.NumberFormat("en-US").format(value);
 }
 
 /**
- * Безопасное получение публичного URL сайта (для метаданных, OG, sitemap).
+ * Returns the canonical public URL of the site (for metadata, OG, sitemap).
  */
 export function getSiteUrl(): string {
   return (

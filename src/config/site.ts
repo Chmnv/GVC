@@ -1,18 +1,18 @@
 export const siteConfig = {
   name: "Galaxy Volleyball Club",
   shortName: "GVC",
-  tagline: "Притяжение силы. Орбита команды.",
+  tagline: "Gravity of strength. Orbit of the team.",
   description:
-    "Galaxy Volleyball Club — премиальный волейбольный клуб нового поколения. Технологии, тренировки и атмосфера большого спорта.",
+    "Galaxy Volleyball Club — a next-generation premium volleyball club. Technology, training and the atmosphere of big-time sports in every match.",
   url: "https://galaxyvolleyball.club",
-  locale: "ru-RU",
+  locale: "en-US",
   keywords: [
-    "волейбол",
+    "volleyball",
     "Galaxy Volleyball Club",
     "GVC",
-    "спортивный клуб",
-    "тренировки",
-    "команда",
+    "sports club",
+    "training",
+    "team",
   ],
   social: {
     instagram: "https://instagram.com/",

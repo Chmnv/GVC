@@ -7,27 +7,27 @@ import type { AchievementItem } from "@/types";
 const achievements: AchievementItem[] = [
   {
     year: "2025",
-    title: "Серебро Открытого Кубка региона",
+    title: "Silver at the Regional Open Cup",
     description:
-      "Молодёжная команда GVC дошла до финала, уступив лишь по очкам в пятой партии.",
+      "The GVC youth squad reached the final, losing only on points in the fifth set.",
   },
   {
     year: "2024",
-    title: "Чемпионы Юношеской Лиги",
+    title: "Champions of the Junior League",
     description:
-      "Воспитанники клуба U-17 взяли золото и завоевали путёвку на Всероссийские игры.",
+      "Our U-17 athletes took gold and earned a place at the national games.",
   },
   {
     year: "2023",
-    title: "Запуск программы Analytics+",
+    title: "Launch of the Analytics+ program",
     description:
-      "Внедрили систему видео-разборов и носимой телеметрии для всех команд клуба.",
+      "We rolled out video review and wearable telemetry for every team in the club.",
   },
   {
     year: "2022",
-    title: "Открытие нового зала",
+    title: "New training facility",
     description:
-      "Три профессиональных площадки, медиа-зона и центр восстановления спортсменов.",
+      "Three professional courts, a media zone and a dedicated athlete recovery center.",
   },
 ];
 
@@ -37,14 +37,14 @@ export function Achievements() {
       <Container size="wide">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div className="lg:sticky lg:top-32 lg:self-start">
-            <Badge variant="accent">Достижения</Badge>
+            <Badge variant="accent">Achievements</Badge>
             <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-              Хронология <br />
-              <span className="text-gradient">наших побед</span>
+              A timeline <br />
+              <span className="text-gradient">of our victories</span>
             </h2>
             <p className="mt-5 max-w-md text-muted-foreground">
-              Каждый сезон — это новая высота. Мы делимся ключевыми моментами
-              жизни клуба и его команд.
+              Every season we reach a new peak. Here are the milestones that
+              shape the club and its teams.
             </p>
           </div>
 

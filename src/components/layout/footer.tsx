@@ -41,7 +41,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border/60 pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>
-            © {year} {siteConfig.name}. Все права защищены.
+            © {year} {siteConfig.name}. All rights reserved.
           </p>
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70">
             Powered by Next.js · Tailwind · Framer Motion

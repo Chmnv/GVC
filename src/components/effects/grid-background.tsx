@@ -5,8 +5,8 @@ interface GridBackgroundProps {
 }
 
 /**
- * Лёгкая декоративная сетка с radial-маской.
- * Размещайте абсолютно внутри секции с `relative`.
+ * Subtle decorative grid with a radial mask.
+ * Place absolutely inside a section with `relative` positioning.
  */
 export function GridBackground({ className }: GridBackgroundProps) {
   return (

@@ -6,12 +6,12 @@ import type { StatItem } from "@/types";
 const stats: StatItem[] = [
   {
     value: "320+",
-    label: "Воспитанников",
-    hint: "От детских групп до взрослой лиги",
+    label: "Athletes",
+    hint: "From youth groups to the senior league",
   },
-  { value: "24", label: "Тренера", hint: "С международным опытом" },
-  { value: "47", label: "Кубков", hint: "Региональные и национальные" },
-  { value: "98%", label: "Возвращаются", hint: "В следующий сезон" },
+  { value: "24", label: "Coaches", hint: "With international experience" },
+  { value: "47", label: "Trophies", hint: "Regional and national titles" },
+  { value: "98%", label: "Return rate", hint: "Athletes who stay next season" },
 ];
 
 export function Stats() {

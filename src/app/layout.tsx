@@ -5,7 +5,7 @@ import { getSiteUrl } from "@/lib/utils";
 import "./globals.css";
 
 const fontSans = Inter({
-  subsets: ["latin", "cyrillic"],
+  subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -63,7 +63,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="ru"
+      lang="en"
       className={`${fontSans.variable} ${fontDisplay.variable} ${fontMono.variable} dark`}
       suppressHydrationWarning
     >

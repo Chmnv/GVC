@@ -39,7 +39,7 @@ export function Header() {
         <Logo />
 
         <nav
-          aria-label="Главная навигация"
+          aria-label="Main navigation"
           className="hidden items-center gap-8 lg:flex"
         >
           {mainNav.map((item) => (
@@ -54,16 +54,16 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Button asChild variant="ghost" size="sm">
-            <a href="#contact">Войти</a>
+            <a href="#contact">Sign in</a>
           </Button>
           <Button asChild size="sm">
-            <a href="#contact">Записаться</a>
+            <a href="#contact">Join now</a>
           </Button>
         </div>
 
         <button
           type="button"
-          aria-label={open ? "Закрыть меню" : "Открыть меню"}
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/80 text-muted-foreground transition-colors hover:text-foreground lg:hidden"
@@ -72,7 +72,7 @@ export function Header() {
         </button>
       </div>
 
-      {/* Мобильное меню */}
+      {/* Mobile menu */}
       <div
         className={cn(
           "border-t border-border/60 bg-background/95 backdrop-blur-xl transition-all duration-300 lg:hidden",
@@ -95,12 +95,12 @@ export function Header() {
           <div className="mt-4 flex flex-col gap-2">
             <Button asChild variant="outline" size="md">
               <a href="#contact" onClick={() => setOpen(false)}>
-                Войти
+                Sign in
               </a>
             </Button>
             <Button asChild size="md">
               <a href="#contact" onClick={() => setOpen(false)}>
-                Записаться на тренировку
+                Book a trial training
               </a>
             </Button>
           </div>

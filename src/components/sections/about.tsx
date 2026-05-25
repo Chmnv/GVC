@@ -8,27 +8,27 @@ import type { FeatureItem } from "@/types";
 
 const features: FeatureItem[] = [
   {
-    title: "Технологичные тренировки",
+    title: "Tech-driven training",
     description:
-      "Видео-аналитика, датчики ускорения и тепловые карты — каждое движение работает на результат.",
+      "Video analytics, motion sensors and heat maps — every movement is calibrated to win.",
     icon: BrainCircuit,
   },
   {
-    title: "Силовая подготовка",
+    title: "Strength & conditioning",
     description:
-      "Индивидуальные программы ОФП и СФП под возраст, амплуа и игровой профиль спортсмена.",
+      "Individual S&C programs tailored to age, role and the player's game profile.",
     icon: Dumbbell,
   },
   {
-    title: "Тактическая аналитика",
+    title: "Tactical analytics",
     description:
-      "Разборы игр, противников и собственных ошибок — превращаем данные в спортивные решения.",
+      "Match, opponent and self-review breakdowns — we turn data into on-court decisions.",
     icon: Radar,
   },
   {
-    title: "Реабилитация и здоровье",
+    title: "Recovery & health",
     description:
-      "Физиотерапия, восстановление и мониторинг нагрузок: ноль травм, максимум прогресса.",
+      "Physiotherapy, recovery and load monitoring: zero injuries, maximum progress.",
     icon: Activity,
   },
 ];
@@ -40,15 +40,15 @@ export function About() {
 
       <Container size="wide" className="relative">
         <div className="mx-auto max-w-3xl text-center">
-          <Badge variant="nebula">О клубе</Badge>
+          <Badge variant="nebula">About the club</Badge>
           <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Спорт нового поколения — <br className="hidden sm:block" />
-            <span className="text-gradient">точный, быстрый, умный</span>
+            Next-generation sport — <br className="hidden sm:block" />
+            <span className="text-gradient">precise, fast, intelligent</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Мы соединяем классику большого волейбола с современными
-            технологиями подготовки. От первого касания мяча до выхода в
-            профессиональную лигу — рядом с командой, аналитикой и заботой.
+            We combine the craft of high-level volleyball with modern training
+            technology. From the first touch of the ball to the professional
+            league — alongside a team, real analytics and genuine care.
           </p>
         </div>
 

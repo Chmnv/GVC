@@ -1,32 +1,32 @@
 import type { NavItem } from "@/types";
 
 export const mainNav: NavItem[] = [
-  { label: "Клуб", href: "#about" },
-  { label: "Команда", href: "#team" },
-  { label: "Расписание", href: "#schedule" },
-  { label: "Достижения", href: "#achievements" },
-  { label: "Контакты", href: "#contact" },
+  { label: "Club", href: "#about" },
+  { label: "Team", href: "#team" },
+  { label: "Schedule", href: "#schedule" },
+  { label: "Achievements", href: "#achievements" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const footerNav: { title: string; items: NavItem[] }[] = [
   {
-    title: "Клуб",
+    title: "Club",
     items: [
-      { label: "О нас", href: "#about" },
-      { label: "Тренеры", href: "#team" },
-      { label: "Достижения", href: "#achievements" },
+      { label: "About", href: "#about" },
+      { label: "Coaches", href: "#team" },
+      { label: "Achievements", href: "#achievements" },
     ],
   },
   {
-    title: "Тренировки",
+    title: "Training",
     items: [
-      { label: "Расписание", href: "#schedule" },
-      { label: "Группы", href: "#groups" },
-      { label: "Записаться", href: "#contact" },
+      { label: "Schedule", href: "#schedule" },
+      { label: "Groups", href: "#groups" },
+      { label: "Sign up", href: "#contact" },
     ],
   },
   {
-    title: "Контакты",
+    title: "Contact",
     items: [
       { label: "Email", href: "mailto:hello@galaxyvolleyball.club" },
       { label: "Telegram", href: "https://t.me/" },

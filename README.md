@@ -1,77 +1,77 @@
 # Galaxy Volleyball Club (GVC)
 
-Премиальный сайт волейбольного клуба нового поколения. Футуристичная тёмная sports-tech эстетика, построенная на современном стеке.
+A premium volleyball-club website with a futuristic, dark sports-tech aesthetic, built on a modern Next.js 15 stack.
 
-## Стек
+## Stack
 
 - **Next.js 15** (App Router) + React 19
-- **TypeScript** в строгом режиме
-- **Tailwind CSS** + `tailwindcss-animate` + дизайн-токены (HSL CSS-переменные)
-- **Framer Motion** — заготовлен для будущих премиум-анимаций
-- **lucide-react** — иконография
-- **shadcn/ui-подход** — `class-variance-authority`, `clsx`, `tailwind-merge`, `@radix-ui/react-slot`
-- **next/font** — Inter (UI) + Space Grotesk (display) + JetBrains Mono (моно)
-- ESLint 9 (flat config) + Prettier с плагином Tailwind
+- **TypeScript** in strict mode
+- **Tailwind CSS** + `tailwindcss-animate` + design tokens (HSL CSS variables)
+- **Framer Motion** — wired up and ready for premium animations
+- **lucide-react** — iconography
+- **shadcn/ui approach** — `class-variance-authority`, `clsx`, `tailwind-merge`, `@radix-ui/react-slot`
+- **next/font** — Inter (UI) + Space Grotesk (display) + JetBrains Mono (mono)
+- ESLint 9 (flat config) + Prettier with the Tailwind plugin
 
-## Запуск
+## Getting started
 
 ```bash
 npm install
-npm run dev        # запуск дев-сервера на http://localhost:3000
-npm run build      # production-сборка
-npm run start      # запуск production-сервера
+npm run dev        # dev server at http://localhost:3000
+npm run build      # production build
+npm run start      # production server
 npm run lint       # ESLint
 npm run type-check # tsc --noEmit
 npm run format     # Prettier
 ```
 
-## Архитектура
+## Architecture
 
 ```
 src/
 ├─ app/                    # App Router: layouts, pages, globals.css
-│  ├─ layout.tsx           # корневой layout, метаданные, шрифты
-│  ├─ page.tsx             # главная (Hero + Stats + About + Achievements + CTA)
-│  ├─ not-found.tsx        # премиум 404
-│  └─ globals.css          # дизайн-токены, базовые стили, утилитарные классы
+│  ├─ layout.tsx           # root layout, metadata, fonts
+│  ├─ page.tsx             # home (Hero + Stats + About + Achievements + CTA)
+│  ├─ not-found.tsx        # premium 404
+│  └─ globals.css          # design tokens, base styles, utility classes
 ├─ components/
-│  ├─ ui/                  # переиспользуемые примитивы (Button, Card, Badge, Container, Section)
+│  ├─ ui/                  # reusable primitives (Button, Card, Badge, Container, Section)
 │  ├─ layout/              # Header, Footer, Logo, NavLink
-│  ├─ sections/            # секции главной страницы
-│  └─ effects/             # декоративные эффекты (Glow, GridBackground, Noise, Reveal)
+│  ├─ sections/            # home-page sections
+│  └─ effects/             # decorative effects (Glow, GridBackground, Noise, Reveal)
 ├─ config/
-│  ├─ site.ts              # имя, описание, ссылки, ключевые слова
-│  └─ nav.ts               # навигация шапки и футера
-├─ hooks/                  # useMounted, useMediaQuery (готовы к расширению)
+│  ├─ site.ts              # site name, description, links, keywords
+│  └─ nav.ts               # header and footer navigation
+├─ hooks/                  # useMounted, useMediaQuery (ready to extend)
 ├─ lib/
-│  └─ utils.ts             # cn(), форматтеры, getSiteUrl()
+│  └─ utils.ts             # cn(), formatters, getSiteUrl()
 └─ types/
-   └─ index.ts             # доменные типы (NavItem, StatItem, FeatureItem...)
+   └─ index.ts             # domain types (NavItem, StatItem, FeatureItem, ...)
 ```
 
-## Дизайн-система
+## Design system
 
-- Тёмная тема **по умолчанию** (`<html className="dark">`), цвета описаны через CSS-переменные в `globals.css`. Светлая тема может быть добавлена без переделок — достаточно расширить блок `:root` темой `.light`.
-- Цвета: `background`, `surface`, `surface-elevated`, `primary`, `accent`, `nebula`, `star`, `muted`. Используются как `bg-primary`, `text-nebula`, `border-border` и т.д.
-- Сложные эффекты — через утилитарные классы `glass`, `gradient-border`, `text-gradient`, `bg-grid`.
-- Анимации: `animate-fade-in`, `animate-fade-up`, `animate-pulse-soft`, `animate-float`, `animate-spin-slow`, `animate-shimmer`. Уважают `prefers-reduced-motion`.
+- Dark theme **by default** (`<html className="dark">`); colors are defined via CSS variables in `globals.css`. A light theme can be added without refactors — simply extend the `:root` block with a `.light` theme.
+- Color tokens: `background`, `surface`, `surface-elevated`, `primary`, `accent`, `nebula`, `star`, `muted`. Use them as `bg-primary`, `text-nebula`, `border-border`, etc.
+- Complex visuals are exposed as utility classes: `glass`, `gradient-border`, `text-gradient`, `bg-grid`.
+- Animations: `animate-fade-in`, `animate-fade-up`, `animate-pulse-soft`, `animate-float`, `animate-spin-slow`, `animate-shimmer`. They respect `prefers-reduced-motion`.
 
-## Готовность к анимациям
+## Ready for animations
 
-- Подключён **Framer Motion** + готовый компонент `Reveal` (`src/components/effects/reveal.tsx`) для появления секций при скролле.
-- В `tailwind.config.ts` уже описаны keyframes для микро-анимаций.
-- `optimizePackageImports` в `next.config.ts` минимизирует bundle при импорте Framer Motion и Lucide.
+- **Framer Motion** is wired up with a ready-made `Reveal` component (`src/components/effects/reveal.tsx`) for scroll-triggered section reveals.
+- `tailwind.config.ts` already defines keyframes for micro-animations.
+- `optimizePackageImports` in `next.config.ts` keeps the bundle lean when importing Framer Motion and Lucide.
 
-## Дальнейшее развитие
+## Roadmap
 
-- Добавить страницы: `/team`, `/schedule`, `/news/[slug]`, `/contact`.
-- Подключить CMS (Sanity / Payload) или MDX для новостей.
-- Добавить формы (react-hook-form + zod) и страницу регистрации на тренировки.
-- Подключить аналитику (Vercel Analytics) и Vercel OG для соц-карточек.
+- Add pages: `/team`, `/schedule`, `/news/[slug]`, `/contact`.
+- Plug in a CMS (Sanity / Payload) or MDX for news.
+- Add forms (`react-hook-form` + `zod`) and a training sign-up page.
+- Wire up analytics (Vercel Analytics) and Vercel OG for social cards.
 
-## Производительность
+## Performance
 
-- Изображения — через `next/image` с AVIF/WebP.
-- Шрифты — через `next/font` с `display: swap`, без CLS.
-- Подсветка/градиенты сделаны на CSS, без JS-расчётов.
-- Минимум клиентских компонентов; только `Header` и `Reveal` помечены `"use client"`.
+- Images via `next/image` with AVIF/WebP.
+- Fonts via `next/font` with `display: swap`, zero CLS.
+- Glows and gradients are pure CSS — no JS calculations.
+- Minimal client components — only `Header` and `Reveal` are marked `"use client"`.
