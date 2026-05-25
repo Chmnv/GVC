@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CalendarDays } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -27,8 +27,8 @@ export function CTA() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 lg:items-end">
-              <Button asChild size="lg" className="w-full lg:w-auto">
+            <div className="flex w-full flex-col gap-3 lg:ml-auto lg:max-w-xs">
+              <Button asChild size="lg" className="w-full">
                 <a href="mailto:hello@galaxyvolleyball.club">
                   Book now
                   <ArrowRight className="h-4 w-4" />
@@ -38,11 +38,14 @@ export function CTA() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="w-full lg:w-auto"
+                className="w-full"
               >
-                <a href="#schedule">View schedule</a>
+                <a href="#schedule">
+                  <CalendarDays className="h-4 w-4" />
+                  View schedule
+                </a>
               </Button>
-              <p className="mt-2 text-xs text-muted-foreground">
+              <p className="mt-1 text-center text-xs text-muted-foreground lg:text-right">
                 First training is free. Ages 7–45.
               </p>
             </div>

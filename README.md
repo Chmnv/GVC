@@ -51,16 +51,87 @@ src/
 
 ## Design system
 
-- Dark theme **by default** (`<html className="dark">`); colors are defined via CSS variables in `globals.css`. A light theme can be added without refactors — simply extend the `:root` block with a `.light` theme.
-- Color tokens: `background`, `surface`, `surface-elevated`, `primary`, `accent`, `nebula`, `star`, `muted`. Use them as `bg-primary`, `text-nebula`, `border-border`, etc.
-- Complex visuals are exposed as utility classes: `glass`, `gradient-border`, `text-gradient`, `bg-grid`.
-- Animations: `animate-fade-in`, `animate-fade-up`, `animate-pulse-soft`, `animate-float`, `animate-spin-slow`, `animate-shimmer`. They respect `prefers-reduced-motion`.
+Open the live showcase at [`/design`](http://localhost:3000/design) — every primitive, token and effect is documented there.
+
+**Color tokens** (HSL CSS variables in `globals.css`):
+
+- **Surface**: `background`, `surface`, `surface-elevated`, `surface-overlay`, `muted`
+- **Borders**: `border`, `border-subtle`, `border-strong`
+- **Brand**: `primary`, `accent`, `nebula`, `star`
+- **Neon accents**: `neon-blue`, `neon-cyan`, `neon-violet`, `neon-magenta`, `neon-pink`, `neon-lime`
+- **Semantic**: `success`, `warning`, `info`, `destructive`
+
+Use them as Tailwind classes — `bg-primary`, `text-neon-cyan`, `border-border-strong`, `shadow-glow-magenta`, etc.
+
+**Typography**:
+
+- `font-display` — Space Grotesk (headlines)
+- `font-sans` — Inter (UI & body)
+- `font-mono` — JetBrains Mono (code, metadata, tags)
+- Type scale (`text-2xs` → `text-8xl`) ships with paired line-heights and letter-spacing.
+
+**Spacing**:
+
+- 4 px base scale + Tailwind defaults
+- Extended: `space-18`, `space-22`, `space-26`, `space-30`
+- Fluid semantic tokens: `space-section` (`clamp(4rem, 8vw, 7.5rem)`), `space-gutter` (`clamp(1rem, 4vw, 2.5rem)`)
+
+**Reusable primitives** (`src/components/ui/`):
+
+- `Button` — 7 variants × 7 sizes, with `loading`, `leftIcon`, `rightIcon`, and `asChild`
+- `Badge` — 9 variants (incl. `neon`, `live`, semantic)
+- `Card` — 5 variants (`default`, `elevated`, `bordered`, `ghost`, `neon`) with `interactive` lift
+- `Input`, `Textarea`, `Label` — dark-tuned form primitives
+- `Spinner`, `Container`, `Section`
+
+**Effects & utility classes**:
+
+- `.glass`, `.glass-strong`, `.glass-soft` — glassmorphism surfaces
+- `.gradient-border`, `.holographic-border` — animated hairline borders
+- `.text-gradient`, `.text-gradient-neon`, `.text-glow`, `.text-glow-cyan` — text effects
+- `.glow-primary`, `.glow-cyan`, `.glow-violet`, `.glow-magenta` — directional glows
+- `.bg-grid`, `.bg-dots`, `.bg-holographic`, `.scan-line-overlay` — backgrounds
+- `.hover-lift` — universal premium hover micro-animation
+- `.hairline` — subtle gradient divider
+- Shadows: `shadow-glow`, `shadow-glow-strong`, `shadow-glow-cyan`, `shadow-glow-violet`, `shadow-glow-magenta`, `shadow-glow-lime`, `shadow-elevated`
+
+**Animations**:
+
+- Keyframes: `animate-fade-in`, `animate-fade-up`, `animate-pulse-soft`, `animate-float`, `animate-spin-slow`, `animate-shimmer`, `animate-glow-pulse`, `animate-gradient-shift`, `animate-scan-line`
+- Timing: `ease-smooth`, `ease-snap`, `ease-bounce`
+- All animations respect `prefers-reduced-motion`.
 
 ## Ready for animations
 
 - **Framer Motion** is wired up with a ready-made `Reveal` component (`src/components/effects/reveal.tsx`) for scroll-triggered section reveals.
 - `tailwind.config.ts` already defines keyframes for micro-animations.
 - `optimizePackageImports` in `next.config.ts` keeps the bundle lean when importing Framer Motion and Lucide.
+
+## Deploy to GitHub Pages
+
+The repo ships with a GitHub Actions workflow at `.github/workflows/deploy.yml` that produces a fully static build and publishes it to GitHub Pages.
+
+**One-time setup** (GitHub UI):
+
+1. Push your code to `main` (or `master`).
+2. Open **Repository → Settings → Pages**.
+3. Set **Source** to **GitHub Actions**.
+
+That's it — every push to `main`/`master` re-deploys the site at:
+
+```
+https://<your-username>.github.io/<repo-name>/
+```
+
+**How it works**:
+
+- When `GITHUB_ACTIONS=true`, `next.config.ts` switches to `output: "export"`, sets `basePath` and `assetPrefix` from the repo name, disables image optimization, and writes a static site to `./out/`.
+- The workflow adds `.nojekyll` so GitHub serves the files as-is (without Jekyll processing) — that's why you previously saw the README instead of the site.
+- Local `npm run dev` and Vercel deployments are unaffected — those flags only apply inside GitHub Actions.
+
+**Custom domain / different basePath**:
+
+Set `NEXT_PUBLIC_BASE_PATH` in the workflow (e.g. `""` for a custom domain at root, or any other prefix).
 
 ## Roadmap
 
